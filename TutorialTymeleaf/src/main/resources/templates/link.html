@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial of Thymeleaf</title>
+</head>
+<body>
+    <h1>Thymeleaf Page</h1>
+    <!-- 
+    以下リンク式(@{リンク先URL})
+    : aid->プレースホルダー：別の値で置き換わる
+    : aid=${id}->プレースホルダーの定義。「プレースホルダー名=値」の形式
+    : ${id}->変数式。{aid}が${id}に置き換わる
+     -->
+    <p><a th:href="@{/nextpage/{aid}(aid=${id})}">リンク</a></p>
+    <p><a th:href="@{/nextpage/{aid}(aid=${param.id[0]})}">リンク2</a></p>
+    <p><a th:href="@{/nextpage/(id=${param.id[0]})}">リンク3</a></p>
+    
+</body>
+</html>
